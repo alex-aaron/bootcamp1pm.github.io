@@ -26,7 +26,7 @@ function length(string) {
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
 
-
+    
 
     // YOUR CODE ABOVE HERE //
 }
@@ -126,10 +126,17 @@ function concat(stringOne, stringTwo) {
  * TIP: This Function pulls out all the arguments passed to it and stores them
  *      in an Array called args.
  */
+
+var string = [];
+
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // var args = Array.from(arguments);
+    var arguments = string.concat(stringOne,stringTwo)
+
     var args = Array.from(arguments);
 
+    return args.join('');
 
     // YOUR CODE ABOVE HERE //
 }
@@ -160,7 +167,15 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    // var arrOne = stringOne.toLowerCase().split('');
+    // var arrTwo = stringTwo.toLowerCase().split('');
+    if (stringOne > stringTwo) {
+      return 1;
+    } else if (stringOne < stringTwo) {
+      return -1;
+    } else {
+      return 0;
+    }
 
 
     // YOUR CODE ABOVE HERE //
@@ -176,7 +191,13 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    if (stringOne > stringTwo) {
+        return 1;
+      } else if (stringOne < stringTwo) {
+        return -1;
+      } else {
+        return 0;
+      }
 
 
 

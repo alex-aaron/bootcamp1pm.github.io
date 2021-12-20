@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-
+    
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +27,13 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection)) {
+        return "array";
+    } else {
+        if (typeof collection === 'object' && collection !== null && collection instanceof Date === false) {
+            return 'object';
+        }
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -91,7 +97,11 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    if (object.friends && object.friends.includes(name)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -99,7 +109,13 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+    var outputArr = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].name !== name && !array[i].friends.includes(name)) {
+            outputArr.push(array[i].name);
+        }
+    }
+    return outputArr;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -107,7 +123,7 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+    object[key]
 }
 
 //////////////////////////////////////////////////////////////////////

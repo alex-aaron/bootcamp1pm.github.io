@@ -12,12 +12,11 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
+    console.log("hit this function")
 
 
     // YOUR CODE GOES ABOVE HERE //
 }
-
 
 
 

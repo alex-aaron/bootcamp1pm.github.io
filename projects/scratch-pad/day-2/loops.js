@@ -12,7 +12,7 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
+  console.log("I want to see x value");
   
   
   
@@ -50,7 +50,9 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
+  for (var key in object) {
+    console.log(object[key]);
+  }
   
   
   
@@ -59,12 +61,19 @@ function printObjectKeys(object) {
 
 /** 
  * Given an input Object, return an Array containing the Object's values.
+ * I: object
+ * O: array of all of the object's values
+ * C: N/A
+ * E: N/A
  */
 function getObjectValues(object) {
+  var values = [];
   // YOUR CODE BELOW HERE //
+  for (var key in object) {
+    values.push(object[key])
+  }
   
-  
-  
+  return values;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -100,11 +109,14 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
+  const arr = [];
+  for(const key in object){
+    arr.push(object[key]);
+  }
+  for(let i = arr.length - 1; i >= 0; i--){
+    console.log(arr[i]);
+  }
   
-  
-  
-  
-  // YOUR CODE ABOVE HERE //
 }
 
 

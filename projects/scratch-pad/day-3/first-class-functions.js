@@ -13,6 +13,9 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    return function(value) {
+        return value > base;
+    }
     
     
     
@@ -39,11 +42,17 @@ function createLessThanFilter(base) {
  * Function that tests whether a given String starts with the startsWith 
  * character.
  */
-function createStartsWithFilter(startsWith) {
+function createStartsWithFilter(startsWith) { // "A"
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    var lowerStartsWith = startsWith.toLowerCase();
+    return function(string){
+        var lowerString = string.toLowerCase();
+        if (lowerStartsWith === lowerString[0]){
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -69,7 +78,7 @@ function createEndsWithFilter(endsWith) {
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
  */
-function modifyStrings(strings, modify) {
+function modifyStrings(strings, modify) { // 
     // YOUR CODE BELOW HERE //
     
     
