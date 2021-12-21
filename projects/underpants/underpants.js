@@ -5,6 +5,19 @@
 
 var _ = {};
 
+/*
+
+var _ = {
+    identity: function() {
+        // code
+    },
+    typeOf: function() {
+        // code
+    }
+}
+
+*/
+
 
 /**
 * START OF OUR LIBRARY!
@@ -21,10 +34,10 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
+
 _.identity = function(value) {
     return value;
-};
-
+}
 
 /** _.typeOf
 * Arguments:
@@ -47,7 +60,7 @@ _.identity = function(value) {
 */
 
 _.typeOf = function(value) {
-    return value;
+    
 }
 
 
@@ -139,7 +152,7 @@ _.typeOf = function(value) {
 */
 
 _.each = function(array, func) {
-
+    // 
 }
 
 /** _.unique
