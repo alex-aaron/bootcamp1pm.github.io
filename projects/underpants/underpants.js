@@ -5,20 +5,6 @@
 
 var _ = {};
 
-/*
-
-var _ = {
-    identity: function() {
-        // code
-    },
-    typeOf: function() {
-        // code
-    }
-}
-
-*/
-
-
 /**
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
@@ -151,9 +137,24 @@ _.typeOf = function(value) {
 *      -> should log "a" "b" "c" to the console
 */
 
-_.each = function(array, func) {
-    // 
-}
+_.each = function(collection, func) {
+    // determine if collection is an array
+    if (Array.isArray(collection)) {
+        // iterate through collection
+        for (var i = 0; i < collection.length; i++) {
+            // call input function, passing in the current value of the array, the current index, and the
+            // array as arguments
+            func(collection[i], i, collection);
+        }
+    } else {
+        // iterate through the object
+        for (var key in collection) {
+            func(collection[key], key, collection);
+        }
+    }
+
+};
+
 
 /** _.unique
 * Arguments:
@@ -233,6 +234,27 @@ _.each = function(array, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func) {
+    // create output array
+    var outputArr = [];
+    // determine if collection is array
+    if (Array.isArray(collection))  {
+        // iterate through array
+        for (var i = 0; i < collection.length; i++) {
+            // call the input function, passing in the current array value, current index, and collection
+            var result = func(collection[i], i, collection);
+            outputArr.push(result);
+        }
+    } else {
+        for (var key in collection) {
+            var result = func(collection[key], key, collection);
+            outputArr.push(result);
+        }
+    }
+    // return output array
+    return outputArr;
+};
+
 
 /** _.pluck
 * Arguments:
@@ -267,6 +289,9 @@ _.each = function(array, func) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, test) {
+    
+}
 
 /** _.some
 * Arguments:

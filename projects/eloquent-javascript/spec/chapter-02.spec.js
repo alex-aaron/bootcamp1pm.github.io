@@ -100,7 +100,7 @@ describe('Eloquent JavaScript', function () {
 
     describe("Chessboard", function () {
       it("should draw a chessboard", function () {
-        drawChessboard(8);
+        var board = drawChessboard(8);
         const result = [
           ' # # # #',
           '# # # # ',
@@ -112,21 +112,21 @@ describe('Eloquent JavaScript', function () {
           '# # # # ',
           '',
         ].join('\n');
-        expect(console.log.firstCall.args[0]).to.equal(result);
+        expect(board).to.equal(result);
       });
 
       it("should make a board for any input number", function () {
-        drawChessboard(2);
+        var board = drawChessboard(2);
         const result = [
           ' #',
           '# ',
           '',
         ].join('\n');
-        expect(console.log.firstCall.args[0]).to.equal(result);
+        expect(board).to.equal(result);
       });
 
       it("should make a board for any input number", function () {
-        drawChessboard(7);
+        var board = drawChessboard(7);
         const result = [
           ' # # # ',
           '# # # #',
@@ -137,7 +137,7 @@ describe('Eloquent JavaScript', function () {
           ' # # # ',
           '',
         ].join('\n');
-        expect(console.log.firstCall.args[0]).to.equal(result);
+        expect(board).to.equal(result);
       });
     });
   });
