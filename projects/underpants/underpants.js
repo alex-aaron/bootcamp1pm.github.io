@@ -104,6 +104,15 @@ _.typeOf = function(value) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 
 /** _.contains
 * Arguments:
@@ -166,11 +175,21 @@ _.each = function(collection, func) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if (_.indexOf(newArray, array[i]) === -1) {
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}
+
 
 /** _.filter
 * Arguments:
 *   1) An array
-*   2) A function
+*   2) A function // test
 * Objectives:
 *   1) call <function> for each element in <array> passing the arguments:
 *      the element, it's index, <array>
@@ -182,6 +201,16 @@ _.each = function(collection, func) {
 * Extra Credit:
 *   use _.each in your implementation
 */
+
+_.filter = function(array, test) {
+    var filtered = [];
+    for (var i = 0; i < array.length; i++) {
+        if (test(array[i], i, array)) {
+            filtered.push(array[i]);
+        }
+    }
+    return filtered;
+}
 
 
 /** _.reject
@@ -334,6 +363,22 @@ _.every = function(collection, test) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed) {
+    // if no seed was provided
+    if (seed === undefined) { 
+        seed = array[0];
+        for (let i = 1; i < array.length; i++) {
+            seed = func(seed, array[i], i);
+        }
+    } else {
+        // else a seed was provided
+        for (let i = 0; i < array.length; i++) {
+            seed = func(seed, array[i], i);
+        }
+    }
+    return seed;
+};
+
 
 /** _.extend
 * Arguments:
@@ -348,6 +393,24 @@ _.every = function(collection, test) {
 *   var data = {a:"one"};
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
+*/
+
+_.extend = function(...objects) {
+    var targetObj = objects[0]; // {a: "one"}
+    for (var i = 1; i < objects.length; i++) {
+        for (var key in objects[i]) {
+            targetObj[key] = objects[i][key];
+        }
+    }
+    return targetObj;
+}
+
+
+/*
+extend({a: "one"}, {b: "two", d: "four"}, {c: "three"}, etc.);
+
+{a: "one", b: "two", c: "three"}
+
 */
 
 //////////////////////////////////////////////////////////////////////

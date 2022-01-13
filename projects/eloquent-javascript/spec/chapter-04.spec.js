@@ -8,7 +8,7 @@ describe('Eloquent JavaScript', function () {
         expect(range(1, 3)).to.deep.equal([1, 2, 3]);
       });
       it("should create array with contents of integers within given range, integrating given step", function () {
-        expect(range(1, 5, 2)).to.deep.equal([1, 3, 5]);
+        expect(range(1, 5, 2)).to.deep.equal([1, 3, 5]); // range(1, 5) => [1, 3, 5]
       });
       it("should create array with contents of integers within given range, integrating negative step", function () {
         expect(range(1, 5, -1)).to.deep.equal([]);
